@@ -30,8 +30,8 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
-        getSupportActionBar()?.hide()
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getSupportActionBar()?.hide();
         setContentView(R.layout.activity_cuando_quieres_hacerlo)
 
         fecha = findViewById(R.id.btn_fechaTarea)
