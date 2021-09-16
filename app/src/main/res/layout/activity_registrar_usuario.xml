@@ -54,6 +54,9 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Contraseña"
+        android:password="true"
+        app:passwordToggleEnabled="true"
+
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/txtFecha"
         app:layout_constraintHorizontal_bias="0.0"
@@ -68,6 +71,9 @@
         android:ems="10"
         android:hint="Confirmar contraseña"
         android:inputType="textPassword"
+        android:password="true"
+        app:passwordToggleEnabled="true"
+
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
