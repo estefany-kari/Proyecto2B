@@ -98,6 +98,10 @@ class NuevaTarea : AppCompatActivity() {
                 }
             }*/
             abrirActividad(Inicio::class.java) }
+        val btnCancelar = findViewById<Button>(R.id.id_cancelarTarea)
+        btnCancelar .setOnClickListener {
+
+            abrirActividad(Inicio::class.java) }
     }
     fun abrirActividad(clase: Class<*>){
         val intentExplicito = Intent(
