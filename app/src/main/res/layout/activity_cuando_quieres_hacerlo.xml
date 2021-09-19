@@ -35,7 +35,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_date_range_24" />
 
         <TextView
@@ -79,7 +78,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_today_24" />
 
         <TextView
@@ -151,7 +149,6 @@
             android:id="@+id/icRecordatorio"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_notifications_24" />
 
         <TextView
@@ -190,7 +187,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_arrow_upward_24" />
 
         <TextView
