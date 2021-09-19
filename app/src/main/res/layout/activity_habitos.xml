@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Habitos">
 
-<<<<<<< Updated upstream
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton2"
         android:layout_width="63dp"
@@ -24,7 +23,6 @@
         app:rippleColor="#FFFFFF"
         app:srcCompat="@drawable/ic_baseline_add_verde" />
 
-=======
     <ScrollView
         android:layout_width="409dp"
         android:layout_height="601dp"
@@ -55,5 +53,4 @@
             </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
     </ScrollView>
->>>>>>> Stashed changes
 </androidx.constraintlayout.widget.ConstraintLayout>
