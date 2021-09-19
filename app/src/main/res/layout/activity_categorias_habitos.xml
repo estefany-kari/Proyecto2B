@@ -30,7 +30,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_more_horiz_24" />
 
     </LinearLayout>
@@ -59,7 +58,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_work_24" />
 
     </LinearLayout>
@@ -89,7 +87,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_food_bank_24" />
 
     </LinearLayout>
@@ -119,7 +116,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_forum_24" />
 
     </LinearLayout>
@@ -141,7 +137,6 @@
             android:id="@+id/AireLibre"
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:gravity="center"
             android:text="Aire Libre"
             android:textColor="#000000"
@@ -150,7 +145,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_filter_hdr_24" />
 
     </LinearLayout>
@@ -172,7 +166,6 @@
             android:id="@+id/Hogar"
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:gravity="center"
             android:text="Hogar"
             android:textColor="#000000"
@@ -181,7 +174,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:scrollbarTrackVertical="@drawable/ic_baseline_house_24"
             android:src="@drawable/ic_baseline_house_24" />
 
@@ -212,7 +204,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_local_hospital_24" />
 
     </LinearLayout>
@@ -242,7 +233,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_sports_handball_24" />
 
     </LinearLayout>
@@ -272,7 +262,6 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:src="@drawable/ic_baseline_emoji_symbols_24" />
 
     </LinearLayout>
@@ -294,7 +283,6 @@
             android:id="@+id/Estudio"
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:background="@color/white"
             android:gravity="center"
             android:text="Estudio"
             android:textColor="#000000"
@@ -303,7 +291,7 @@
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
+            android:background="@color/ic_llave_background"
             android:src="@drawable/ic_baseline_school_24" />
 
     </LinearLayout>
@@ -326,13 +314,13 @@
             android:layout_height="45dp"
             android:gravity="center"
             android:text="Meditación"
-            android:textColor="#000000"
+            android:textColor="#050505"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
+            android:background="@color/ic_llave_background"
             android:src="@drawable/ic_baseline_self_improvement_24" />
 
     </LinearLayout>
@@ -356,13 +344,13 @@
             android:layout_height="45dp"
             android:gravity="center"
             android:text="Dejar un mal hábito"
-            android:textColor="#000000"
+            android:textColor="#0E0E0E"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:background="@color/white"
+            android:background="@color/ic_llave_background"
             android:src="@drawable/ic_baseline_block_24" />
 
     </LinearLayout>
@@ -376,7 +364,7 @@
         android:backgroundTint="#A9F1E5"
         android:drawableStart="@drawable/estilo_borde_circular"
         android:text="Cancelar"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="30dp"
