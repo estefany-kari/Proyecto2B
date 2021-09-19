@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app ="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/id_menu_sanduche"
+        android:icon="@drawable/ic_baseline_menu_24"
+        app:showAsAction="always"
+
+        android:title="menu" />
+    <item
+        android:id="@+id/id_menu_mis_tareas"
+        android:title="Hoy"
+        app:showAsAction="always"
+
+        />
+    <item
+        android:id="@+id/id_mishabitos_menu"
+        android:title="Mis Habitos"
+        app:showAsAction="always"
+
+        />
+    <item
+    android:id="@+id/id_calendario"
+    android:icon="@drawable/ic_baseline_calendar_today_24"
+    app:showAsAction="always"
+
+        android:title="calendario" />
+
+</menu>
