@@ -57,41 +57,22 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
             println ("${cat}")
             val frecuencia = FrecuenciaHabito.Frecuencia
             println ("${frecuencia}")
-
             val nombreH = DefinirHabito.NombreHab
             println ("${nombreH}")
-
             val descripcionHab = DefinirHabito.DescHab
             println ("${descripcionHab}")
-
             val fechaIn = fecha.text.toString()
             println ("${fechaIn}")
-
             val FechaF = fechaFin.text.toString()
             println ("${FechaF}")
-
             val PrioridadH = prioridad.text.toString()
             println ("${PrioridadH}")
-
             val horaH = hora.text.toString()
             println ("${horaH}")
 
-            abrirActividad(Inicio::class.java)
-/*
-            if (fechaIn.isEmpty() ||FechaF.isEmpty() || PrioridadH.isEmpty() || horaH.isEmpty() ) {
-                Toast.makeText(this, "Llene todos los datos", Toast.LENGTH_LONG).show()
-            } else {
-                val estado = BaseDeDatos.TablaHabito!!.crearHabitoFormulario(1, cat, frecuencia, nombreH, descripcionHab,
-                    fechaIn, FechaF, horaH, PrioridadH)
 
-                if (estado != null) {
-                    Log.i("añadir Estudiante", "Datos: ${fechaIn} --> ${horaH} --> ${PrioridadH}")
+/*BASE DE DE DATOS FIREBASE*/
 
-                } else {
-                    Toast.makeText(this, "Datos no ingresados", Toast.LENGTH_LONG).show()
-
-                }
-            }*/
             abrirActividad(Inicio::class.java)
         }
 
