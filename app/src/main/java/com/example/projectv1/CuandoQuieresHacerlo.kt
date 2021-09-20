@@ -18,6 +18,8 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import java.util.*
 
 class CuandoQuieresHacerlo : AppCompatActivity() {
@@ -76,24 +78,31 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
             val horaH = hora.text.toString()
             println ("${horaH}")
 
-            abrirActividad(Inicio::class.java)
-/*
-            if (fechaIn.isEmpty() ||FechaF.isEmpty() || PrioridadH.isEmpty() || horaH.isEmpty() ) {
-                Toast.makeText(this, "Llene todos los datos", Toast.LENGTH_LONG).show()
-            } else {
-                val estado = BaseDeDatos.TablaHabito!!.crearHabitoFormulario(1, cat, frecuencia, nombreH, descripcionHab,
-                    fechaIn, FechaF, horaH, PrioridadH)
+            val nuevoHabito = hashMapOf<String,Any>(
+                "Nombre Habito" to nombreH ,
+                "Categoria Habito" to cat ,
+                "Descripcion Habito" to descripcionHab ,
+                "frecuencia Habito" to frecuencia ,
+                "Fecha Inicio Habito" to fechaIn ,
+                "Fecha Fin Habito" to FechaF ,
+                "Prioridad Habito" to PrioridadH ,
+                "Hora Habito" to horaH ,
+                )
 
-                if (estado != null) {
-                    Log.i("añadir Estudiante", "Datos: ${fechaIn} --> ${horaH} --> ${PrioridadH}")
 
-                } else {
-                    Toast.makeText(this, "Datos no ingresados", Toast.LENGTH_LONG).show()
+            val db = Firebase.firestore
+            val referencia = db.collection("Habito")
+            referencia.add(nuevoHabito)
+                .addOnSuccessListener {
 
                 }
-            }*/
+                .addOnFailureListener {  }
+
+            abrirActividad(Inicio::class.java)
+
             abrirActividad(Inicio::class.java)
         }
+
 
     }
     fun abrirActividad(clase: Class<*>){
