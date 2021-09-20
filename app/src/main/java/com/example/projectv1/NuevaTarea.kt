@@ -17,7 +17,13 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.firebase.ktx.Firebase
 import java.util.*
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.ktx.firestore
+
 
 class NuevaTarea : AppCompatActivity() {
 
@@ -79,24 +85,24 @@ class NuevaTarea : AppCompatActivity() {
             val getColaboradores = ColaboradoresTarea.Colaboradores
             println("$getColaboradores")
 
-            /*if (nombreT.isEmpty() ||fechaT.isEmpty() || horaTarea.isEmpty() || PrioridadTarea.isEmpty() ) {
-                Toast.makeText(this, "Llene todos los datos", Toast.LENGTH_LONG).show()
-            } else {
+            val nuevaTarea = hashMapOf<String,Any>(
+                "Nombre" to nombreT,
+                "Categoria" to categoriaTarea,
+                "Fecha" to fechaT,
+                "Hora" to horaTarea,
+                "Prioridad" to PrioridadTarea,
+                "Colaboradores" to getColaboradores,
+            )
 
-                // val estado = BaseDeDatos.TablaTarea!!.crearTareaFormulario(1,categoriaTarea, nombreT,fechaT,horaTarea, PrioridadTarea)
 
-                val estado = BaseDeDatos.TablaTarea!!.crearTareaFormulario(3,categoriaTarea,nombreT, fechaT,
-                    horaTarea, PrioridadTarea)
-
-
-                if (estado != null) {
-                    Log.i("añadir Tarea", "Datos: ${nombreT} --> ${fechaT} --> ${horaTarea}")
-
-                } else {
-                    Toast.makeText(this, "Datos no ingresados", Toast.LENGTH_LONG).show()
+            val db = Firebase.firestore
+            val referencia = db.collection("Tarea")
+            referencia.add(nuevaTarea)
+                .addOnSuccessListener {
 
                 }
-            }*/
+                .addOnFailureListener {  }
+           
             abrirActividad(Inicio::class.java) }
         val btnCancelar = findViewById<Button>(R.id.id_cancelarTarea)
         btnCancelar .setOnClickListener {
@@ -152,4 +158,8 @@ class NuevaTarea : AppCompatActivity() {
             show()
         }
     }
+
+
+
+
 }

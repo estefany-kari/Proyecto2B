@@ -143,7 +143,7 @@
             app:tint="#000000" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/txv_hora_recordatorio"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:layout_weight="1"
@@ -188,7 +188,7 @@
             app:tint="#000000" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/txv_prioridad"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:layout_weight="1"
