@@ -1,13 +1,14 @@
 package com.example.projectv1
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.view.Window
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import java.util.regex.Pattern
 
 class MainActivity : AppCompatActivity() {
     private lateinit var Auth: FirebaseAuth
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
 
     fun abrirActividad(clase: Class<*>){
         val intentExplicito = Intent(
@@ -63,8 +65,8 @@ class MainActivity : AppCompatActivity() {
             editTextClave.requestFocus()
             return
         }
-        if(clave.length<6){
-            editTextClave.setError("La clave debe contener al menos 6 caracteres!")
+        if(clave.length<8){
+            editTextClave.setError("La clave debe contener al menos 8 caracteres!")
             editTextClave.requestFocus()
             return
         }
