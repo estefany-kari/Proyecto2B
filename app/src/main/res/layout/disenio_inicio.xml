@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+
+        <TextView
+            android:id="@+id/id_tv_nombre_tarea"
+            android:layout_width="303dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="14dp"
+            android:text="Nombre de tarea"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/id_tv_categoria"
+            android:layout_width="159dp"
+            android:layout_height="32dp"
+            android:layout_below="@+id/id_tv_nombre_tarea"
+            android:layout_alignStart="@+id/id_tv_nombre_tarea"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-3dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="16dp"
+            android:text="categoria"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/id_tv_hora"
+            android:layout_width="108dp"
+            android:layout_height="32dp"
+            android:layout_below="@+id/id_tv_nombre_tarea"
+            android:layout_alignEnd="@+id/id_tv_nombre_tarea"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="-6dp"
+            android:layout_marginBottom="24dp"
+            android:layout_toEndOf="@+id/id_tv_categoria"
+            android:text="Hora"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/id_icono_tarea"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="22dp"
+            android:layout_toStartOf="@+id/id_tv_categoria"
+            app:srcCompat="@drawable/ic_baseline_school_24" />
+
+    </RelativeLayout>
+
+</LinearLayout>
