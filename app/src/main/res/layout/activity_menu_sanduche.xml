@@ -11,6 +11,7 @@
         android:layout_height="601dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
+<<<<<<< HEAD
         tools:layout_editor_absoluteY="1dp">
 
         <TextView
@@ -19,4 +20,7 @@
             android:layout_height="wrap_content"
             android:text="TextView" />
     </LinearLayout>
+=======
+        tools:layout_editor_absoluteY="1dp"/>
+>>>>>>> cinthia
 </androidx.constraintlayout.widget.ConstraintLayout>

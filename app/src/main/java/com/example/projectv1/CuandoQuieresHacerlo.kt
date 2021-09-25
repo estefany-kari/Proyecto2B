@@ -59,22 +59,16 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
             println ("${cat}")
             val frecuencia = FrecuenciaHabito.Frecuencia
             println ("${frecuencia}")
-
             val nombreH = DefinirHabito.NombreHab
             println ("${nombreH}")
-
             val descripcionHab = DefinirHabito.DescHab
             println ("${descripcionHab}")
-
             val fechaIn = fecha.text.toString()
             println ("${fechaIn}")
-
             val FechaF = fechaFin.text.toString()
             println ("${FechaF}")
-
             val PrioridadH = prioridad.text.toString()
             println ("${PrioridadH}")
-
             val horaH = hora.text.toString()
             println ("${horaH}")
 
@@ -87,8 +81,6 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
                 "Fecha Fin Habito" to FechaF ,
                 "Prioridad Habito" to PrioridadH ,
                 "Hora Habito" to horaH ,
-                )
-
 
             val db = Firebase.firestore
             val referencia = db.collection("Habito")
@@ -98,7 +90,9 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
                 }
                 .addOnFailureListener {  }
 
+
             abrirActividad(Inicio::class.java)
+
 
             abrirActividad(Inicio::class.java)
         }
