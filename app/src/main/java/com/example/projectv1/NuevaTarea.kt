@@ -94,6 +94,7 @@ class NuevaTarea : AppCompatActivity() {
                 "Colaboradores" to getColaboradores,
             )
 
+
             val db = Firebase.firestore
             val referencia = db.collection("Tarea")
             referencia.add(nuevaTarea)
