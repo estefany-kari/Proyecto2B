@@ -87,11 +87,17 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
                 "Fecha Fin Habito" to FechaF ,
                 "Prioridad Habito" to PrioridadH ,
                 "Hora Habito" to horaH ,
+
+            )
+            val db2 = Firebase.firestore
+            val referencia = db2.collection("Habito")
+
                 )
 
 
             val db = Firebase.firestore
             val referencia = db.collection("Habito")
+
             referencia.add(nuevoHabito)
                 .addOnSuccessListener {
 

@@ -11,15 +11,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import java.util.regex.Pattern
 
 
 class RegistrarUsuario : AppCompatActivity() {
     private lateinit var Auth: FirebaseAuth
     private lateinit var txtFecha: EditText
-    private val PASSWORD_PATTERN: Pattern = Pattern.compile(
-        "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\$@\$!%*?&])[A-Za-z\\d\$@\$!%*?&]{8,15}"
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,29 +52,28 @@ class RegistrarUsuario : AppCompatActivity() {
         val Password2 = editTextTextPassword2.getText().toString().trim()
         if (Nombre.isEmpty()) {
             etNombre.setError("El nombre es necesario")
-        } else if (Nombre.length < 8) {
-            etNombre.setError("El nonbre debe contener almenos 8 caracteres")
-        } else if (Nombre.length > 30) {
-            etNombre.setError("El nonbre no debe contener mas de 30 caracteres")
-        } else if (correoUsuario.isEmpty()) {
+        }
+        if (correoUsuario.isEmpty()) {
             emailUsuario.setError("El correo es necesario")
-        } else if (Fecha.isEmpty()) {
+        }
+
+        if (Fecha.isEmpty()) {
             txtFecha.setError("La fecha es necesaria")
-        } else if (Password.isEmpty()) {
+        }
+        if (Password.isEmpty()) {
             editTextTextPassword.setError("La clave es necesaria")
-        } else if (!PASSWORD_PATTERN.matcher(Password).matches()) {
-            editTextTextPassword.setError("Contraseña muy debil")
-        } else if (Password.length < 8) {
-            editTextTextPassword.setError("La contraseña debe tener almenos 8 caracteres")
-        } else if (Password.length > 16) {
-            editTextTextPassword.setError("La contraseña no debe tener mas de 30 caracteres")
         }
         if (Password2.isEmpty()) {
-            editTextTextPassword2.setError("Es necesario confirmar la clave")
+            editTextTextPassword.setError("Es necesario confirmar la clave")
+        }
+        if (Password.length < 6) {
+
         }
         if (Password2 != Password) {
             editTextTextPassword2.setError("Las contraseñas no coinsiden")
         }
+
+
             progressBar.setVisibility(View.VISIBLE)
             Auth.createUserWithEmailAndPassword(correoUsuario, Password)
                 .addOnCompleteListener(this) { task ->
@@ -107,21 +102,25 @@ class RegistrarUsuario : AppCompatActivity() {
                                         ).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
+
                                 }
-                        }
-                    } else {
-                        Toast.makeText(
-                            this,
-                            "FALLO EL REGISTRO, INTENTALO NUEVAMENTE",
-                            Toast.LENGTH_LONG
-                        ).show();
-                        progressBar.setVisibility(View.GONE);
+                            }
                     }
+
+                }else{
+                    Toast.makeText(this, "FALLO EL REGISTRO, INTENTALO NUEVAMENTE",Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                }
+
+            }
+
 
                 }
 
 
+
     }
+
     fun ShowDatePickerDialog() {
         val datePicker = DatePickerFragment{ day, month, year -> OnDateSelected(day, month, year)}
         datePicker.show(supportFragmentManager, "datePcker")
@@ -137,19 +136,6 @@ class RegistrarUsuario : AppCompatActivity() {
         )
         startActivity(intentExplicito)
     }
-    private fun validarPassword(): Boolean {
-        val Password = findViewById<EditText>(R.id.editTextTextPassword)
 
-        val passwordInput: String = Password.getText().toString().trim()
-        return  if (!PASSWORD_PATTERN.matcher(passwordInput).matches()) {
-            Password.setError("Contraseña muy debil")
-            false
-        } else {
-            Password.setError(null)
-            true
-        }
-    }
+
 }
-
-
-
