@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+
+        <TextView
+            android:id="@+id/id_tv_nombre_habito"
+            android:layout_width="303dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="17dp"
+            android:text="Nombre de tarea"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/id_tv_categoria_habito"
+            android:layout_width="142dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_tv_nombre_habito"
+            android:layout_alignStart="@+id/id_tv_nombre_habito"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="12dp"
+            android:text="categoria"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/id_tv_hora_habito"
+            android:layout_width="111dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/id_tv_nombre_habito"
+            android:layout_alignEnd="@+id/id_tv_nombre_habito"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_toEndOf="@+id/id_tv_categoria"
+            android:text="Hora"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/id_icono_cate"
+            android:layout_width="44dp"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="25dp"
+            android:layout_toEndOf="@+id/id_tv_nombre_habito"
+            app:srcCompat="@drawable/ic_baseline_school_24" />
+
+    </RelativeLayout>
+
+</LinearLayout>

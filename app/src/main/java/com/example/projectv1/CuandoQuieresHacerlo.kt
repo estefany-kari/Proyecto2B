@@ -81,7 +81,7 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
                 "Fecha Fin Habito" to FechaF ,
                 "Prioridad Habito" to PrioridadH ,
                 "Hora Habito" to horaH ,
-            )
+
             val db = Firebase.firestore
             val referencia = db.collection("Habito")
             referencia.add(nuevoHabito)
@@ -90,8 +90,13 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
                 }
                 .addOnFailureListener {  }
 
+
+            abrirActividad(Inicio::class.java)
+
+
             abrirActividad(Inicio::class.java)
         }
+
 
     }
     fun abrirActividad(clase: Class<*>){

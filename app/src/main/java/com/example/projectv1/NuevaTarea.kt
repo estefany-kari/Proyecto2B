@@ -101,7 +101,7 @@ class NuevaTarea : AppCompatActivity() {
 
                 }
                 .addOnFailureListener {  }
-           
+
             abrirActividad(Inicio::class.java) }
         val btnCancelar = findViewById<Button>(R.id.id_cancelarTarea)
         btnCancelar .setOnClickListener {

@@ -79,6 +79,36 @@ class RegistrarUsuario : AppCompatActivity() {
         if (Password2 != Password) {
             editTextTextPassword2.setError("Las contraseñas no coinsiden")
         }
+
+            progressBar.setVisibility(View.VISIBLE)
+            Auth.createUserWithEmailAndPassword(correoUsuario, Password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful()) {
+                        val user = User(Nombre, correoUsuario, Fecha, Password, Password2);
+                        FirebaseAuth.getInstance().currentUser?.let {
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                .child(it.uid)
+                                .setValue(user).addOnCompleteListener {
+
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(
+                                            this,
+                                            "USUARIO REGISTRADO EXITOSAMENTE",
+                                            Toast.LENGTH_LONG
+                                        ).show();
+                                        progressBar.setVisibility(View.VISIBLE);
+                                        //DIRIGIR A LA VENTANA LOGIN
+                                        abrirActividad(MainActivity::class.java)
+
+                                    } else {
+                                        Toast.makeText(
+                                            this,
+                                            "FALLO EL REGISTRO, INTENTALO NUEVAMENTE",
+                                            Toast.LENGTH_LONG
+                                        ).show();
+                                        progressBar.setVisibility(View.GONE);
+                                    }
+
         progressBar.setVisibility(View.VISIBLE)
         Auth.createUserWithEmailAndPassword(correoUsuario, Password)
             .addOnCompleteListener(this) { task ->
@@ -106,9 +136,21 @@ class RegistrarUsuario : AppCompatActivity() {
                                         Toast.LENGTH_LONG
                                     ).show();
                                     progressBar.setVisibility(View.GONE);
+
                                 }
-                            }
+                        }
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "FALLO EL REGISTRO, INTENTALO NUEVAMENTE",
+                            Toast.LENGTH_LONG
+                        ).show();
+                        progressBar.setVisibility(View.GONE);
                     }
+
+
+                }
+
                 } else {
                     Toast.makeText(
                         this,
@@ -136,6 +178,20 @@ class RegistrarUsuario : AppCompatActivity() {
         )
         startActivity(intentExplicito)
     }
+    private fun validarPassword(): Boolean {
+        val Password = findViewById<EditText>(R.id.editTextTextPassword)
+
+        val passwordInput: String = Password.getText().toString().trim()
+        return  if (!PASSWORD_PATTERN.matcher(passwordInput).matches()) {
+            Password.setError("Contraseña muy debil")
+            false
+        } else {
+            Password.setError(null)
+            true
+        }
+    }
+}
+
         private fun validarPassword(): Boolean {
             val Password = findViewById<EditText>(R.id.editTextTextPassword)
 
