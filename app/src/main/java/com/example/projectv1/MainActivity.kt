@@ -63,8 +63,8 @@ class MainActivity : AppCompatActivity() {
             editTextClave.requestFocus()
             return
         }
-        if(clave.length<6){
-            editTextClave.setError("La clave debe contener al menos 6 caracteres!")
+        if(clave.length<8){
+            editTextClave.setError("La clave debe contener al menos 8 caracteres!")
             editTextClave.requestFocus()
             return
         }

@@ -89,7 +89,7 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
 
                 }
                 .addOnFailureListener {  }
-            
+
             abrirActividad(Inicio::class.java)
         }
 
