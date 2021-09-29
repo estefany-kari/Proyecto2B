@@ -78,6 +78,8 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
             val horaH = hora.text.toString()
             println ("${horaH}")
 
+            val imagen = categoriasHabitos.imagen
+
             val nuevoHabito = hashMapOf<String,Any>(
                 "Nombre Habito" to nombreH ,
                 "Categoria Habito" to cat ,
@@ -87,12 +89,9 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
                 "Fecha Fin Habito" to FechaF ,
                 "Prioridad Habito" to PrioridadH ,
                 "Hora Habito" to horaH ,
+                "Imagen" to imagen,
 
             )
-            val db2 = Firebase.firestore
-            val referencia = db2.collection("Habito")
-
-                )
 
 
             val db = Firebase.firestore
@@ -103,8 +102,6 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
 
                 }
                 .addOnFailureListener {  }
-
-            abrirActividad(Inicio::class.java)
 
             abrirActividad(Inicio::class.java)
         }

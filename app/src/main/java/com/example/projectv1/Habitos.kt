@@ -51,6 +51,7 @@ class Habitos : AppCompatActivity() {
                         habito.nombreHabito= dc.document.getString("Nombre Habito")
                         habito.CategoriaHabito = dc.document.getString("Categoria Habito")
                         habito.hora = dc.document.getString("Hora Habito")
+                       // habito.imagenHabito = (R.drawable.ic_baseline_food_bank_24)
                         habitoArrayList.add(habito)
                     }
                 }
