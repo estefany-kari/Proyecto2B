@@ -79,6 +79,7 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
             println ("${horaH}")
 
             val imagen = categoriasHabitos.imagen
+            println("$imagen")
 
             val nuevoHabito = hashMapOf<String,Any>(
                 "Nombre Habito" to nombreH ,
