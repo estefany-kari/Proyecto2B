@@ -3,6 +3,7 @@ package com.example.projectv1
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -17,8 +18,6 @@ class habitoAdapter(private val habitoList: ArrayList<habito>): RecyclerView.Ada
         holder.nombreHabito.text= habito.nombreHabito
         holder.categoria.text = habito.CategoriaHabito
         holder.hora.text = habito.hora
-
-        //  holder.icono.text = habito.imagenTarea
     }
 
     override fun getItemCount(): Int {
@@ -28,7 +27,6 @@ class habitoAdapter(private val habitoList: ArrayList<habito>): RecyclerView.Ada
         val nombreHabito: TextView = itemView.findViewById(R.id.id_tv_nombre_habito)
         val categoria: TextView = itemView.findViewById(R.id.id_tv_categoria_habito)
         val hora: TextView = itemView.findViewById(R.id.id_tv_hora_habito)
-        // val icono: TextView = itemView.findViewById(R.id.id_icono_cate)
 
     }
 

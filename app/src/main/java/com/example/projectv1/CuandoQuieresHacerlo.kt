@@ -59,18 +59,26 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
             println ("${cat}")
             val frecuencia = FrecuenciaHabito.Frecuencia
             println ("${frecuencia}")
+
             val nombreH = DefinirHabito.NombreHab
             println ("${nombreH}")
+
             val descripcionHab = DefinirHabito.DescHab
             println ("${descripcionHab}")
+
             val fechaIn = fecha.text.toString()
             println ("${fechaIn}")
+
             val FechaF = fechaFin.text.toString()
             println ("${FechaF}")
+
             val PrioridadH = prioridad.text.toString()
             println ("${PrioridadH}")
+
             val horaH = hora.text.toString()
             println ("${horaH}")
+
+            val imagen = categoriasHabitos.imagen
 
             val nuevoHabito = hashMapOf<String,Any>(
                 "Nombre Habito" to nombreH ,
@@ -81,18 +89,19 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
                 "Fecha Fin Habito" to FechaF ,
                 "Prioridad Habito" to PrioridadH ,
                 "Hora Habito" to horaH ,
-            )
-            val db2 = Firebase.firestore
-            val referencia = db2.collection("Habito")
+                "Imagen" to imagen,
+
+                )
+
+
+            val db = Firebase.firestore
+            val referencia = db.collection("Habito")
+
             referencia.add(nuevoHabito)
                 .addOnSuccessListener {
 
                 }
                 .addOnFailureListener {  }
-
-
-            abrirActividad(Inicio::class.java)
-
 
             abrirActividad(Inicio::class.java)
         }
