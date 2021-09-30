@@ -9,6 +9,7 @@ import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.*
+import kotlinx.android.synthetic.main.activity_habitos.*
 
 class Habitos : AppCompatActivity() {
 
@@ -21,6 +22,12 @@ class Habitos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_habitos)
+
+        btn_crear_habito.setOnClickListener {
+            val intent: Intent = Intent(this, categoriasHabitos::class.java)
+            startActivity(intent)
+        }
+
         recyclerView= findViewById(R.id.rv_habitos)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)

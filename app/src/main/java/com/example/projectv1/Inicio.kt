@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectv1.R.menu.menu_inicio_tareas
 import com.google.firebase.firestore.*
+import kotlinx.android.synthetic.main.activity_habitos.*
+import kotlinx.android.synthetic.main.activity_inicio.*
 
 class  Inicio : AppCompatActivity() {
 
@@ -23,6 +25,11 @@ class  Inicio : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
+
+        btn_crear_tarea.setOnClickListener {
+            val intent: Intent = Intent(this, NuevaTarea::class.java)
+            startActivity(intent)
+        }
         recyclerView= findViewById(R.id.rv_tareas)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
