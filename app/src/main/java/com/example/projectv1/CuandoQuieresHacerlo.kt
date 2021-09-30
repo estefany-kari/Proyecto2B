@@ -72,6 +72,9 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
             val horaH = hora.text.toString()
             println ("${horaH}")
 
+            val imagen = categoriasHabitos.imagen
+            println("$imagen")
+
             val nuevoHabito = hashMapOf<String,Any>(
                 "Nombre Habito" to nombreH ,
                 "Categoria Habito" to cat ,
@@ -81,9 +84,18 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
                 "Fecha Fin Habito" to FechaF ,
                 "Prioridad Habito" to PrioridadH ,
                 "Hora Habito" to horaH ,
+
             )
             val db2 = Firebase.firestore
             val referencia = db2.collection("Habito")
+                "Imagen" to imagen,
+
+            )
+
+
+            val db = Firebase.firestore
+            val referencia = db.collection("Habito")
+
             referencia.add(nuevoHabito)
                 .addOnSuccessListener {
 

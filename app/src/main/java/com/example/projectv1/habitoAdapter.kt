@@ -3,10 +3,13 @@ package com.example.projectv1
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class habitoAdapter(private val habitoList: ArrayList<habito>): RecyclerView.Adapter<habitoAdapter.MyViewHolder>() {
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): habitoAdapter.MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.disenio_habitos,parent,false)
         return habitoAdapter.MyViewHolder(itemView)
@@ -17,6 +20,7 @@ class habitoAdapter(private val habitoList: ArrayList<habito>): RecyclerView.Ada
         holder.nombreHabito.text= habito.nombreHabito
         holder.categoria.text = habito.CategoriaHabito
         holder.hora.text = habito.hora
+        //holder.imageItemOpcion.setImageResource(habitoList[position].imagenHabito)
 
         //  holder.icono.text = habito.imagenTarea
     }
@@ -28,6 +32,10 @@ class habitoAdapter(private val habitoList: ArrayList<habito>): RecyclerView.Ada
         val nombreHabito: TextView = itemView.findViewById(R.id.id_tv_nombre_habito)
         val categoria: TextView = itemView.findViewById(R.id.id_tv_categoria_habito)
         val hora: TextView = itemView.findViewById(R.id.id_tv_hora_habito)
+        /*val imageItemOpcion: ImageView
+        init {
+            imageItemOpcion = itemView.findViewById(R.id.id_icono_cate)
+        }*/
         // val icono: TextView = itemView.findViewById(R.id.id_icono_cate)
 
     }

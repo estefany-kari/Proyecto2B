@@ -94,14 +94,13 @@ class RegistrarUsuario : AppCompatActivity() {
                                 }
                             }
                     }
+
                 }else{
                     Toast.makeText(this, "FALLO EL REGISTRO, INTENTALO NUEVAMENTE",Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 }
 
             }
-
-    }
 
     fun ShowDatePickerDialog() {
         val datePicker = DatePickerFragment{ day, month, year -> OnDateSelected(day, month, year)}
