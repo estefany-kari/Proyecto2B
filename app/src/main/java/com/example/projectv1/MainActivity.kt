@@ -13,7 +13,10 @@ import java.util.regex.Pattern
 class MainActivity : AppCompatActivity() {
     private lateinit var Auth: FirebaseAuth
 
-
+//COMENTARIO
+    //
+    //
+    //
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
